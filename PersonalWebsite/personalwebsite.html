@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julia Wang</title>
     <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
     <style>
       html, h1, body{
@@ -48,7 +49,13 @@
         font-family: 'Quattrocento Sans', sans-serif;
       }
       img {
-        width: 360px;
+        /* Means 100 percent of its parent (juliaPicture) */
+        width: 100%;
+      }
+      .juliaPicture {
+        width: 45%;
+        margin-left: auto;
+        margin-right: auto;
       }
       .clear {
         clear: both;
@@ -56,27 +63,55 @@
 
       #typedText {
         font-size: 36px;
+        font-family: 'Quattrocento Sans', sans-serif;
       }
 
       @font-face {
         src: url("ShorelineFont/Shoreline.otf");
         font-family: "Shoreline";
       }
+
+      @media only screen and (max-width: 600px) {
+        /* Makes name smaller for mobile */
+        h1 {
+          font-size: 40px;
+        }
+        /* Makes picture larger for mobile */
+        .juliaPicture {
+          width: 100%;
+        }
+        /* Allows responsive web design */
+        .container {
+          width: 90%;
+          margin: 0 auto;
+          padding: 0;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="extraDivForMargins">
+      <h1>julia maryann wang</h1>
       <div class="container">
-        <h1>julia maryann wang</h1>
-        <!-- make this rotate later -->
+
+
+        <!-- Rotates the descriptions in a carousel. -->
         <div id="typedText">
-          <span>I am </span>
+          <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+            <span id="typed-strings">I am a
+              <span
+                 class="txt-rotate"
+                 data-period="2000"
+                 data-rotate='[ "learner.", "musician.", "creator." ]'></span>
+            </span>
+
+          <!-- <span>I am </span>
           <span id="typed-strings">
               <p>a learner.</p>
               <p>a musician.</p>
               <p>a creator.</p>
-          </span>
-          <span id="typed"></span>
+          </span> -->
+          <!-- <span id="typed"></span> -->
         </div>
 
         <div class="headingsAtTop">
@@ -89,7 +124,10 @@
           </div>
         </div>
 
-        <img src="juliavacation2018.jpeg" alt="groot">
+        <div class="juliaPicture">
+          <img src="juliavacation2018.jpeg" alt="groot">
+        </div>
+
         <div class="aboutMe">
           <p>About Me</p>
           <ul>
@@ -109,10 +147,70 @@
 
     <script>
 
-      var typed = new Typed('#typed', {
-        stringsElement: '#typed-strings',
-        typeSpeed: 150
-      });
+      // var typed = new Typed('#typed', {
+      //   stringsElement: '#typed-strings',
+      //   typeSpeed: 150
+      // });
+
+// ADD A HOVER EFFECT TO IMAGE LATER!!!!!!!!!!!!!!
+
+        var TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtRotate.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 300 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function() {
+          that.tick();
+        }, delta);
+      };
+
+      window.onload = function() {
+        var elements = document.getElementsByClassName('txt-rotate');
+        for (var i=0; i<elements.length; i++) {
+          var toRotate = elements[i].getAttribute('data-rotate');
+          var period = elements[i].getAttribute('data-period');
+          if (toRotate) {
+            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+        document.body.appendChild(css);
+      };
+
     </script>
   </body>
 </html>
