@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>fish</title>
+    <style media="screen">
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      .fish {
+        background: red;
+        margin: 20px;
+        padding: 20px;
+        /* width: 50%; */
+      }
+      /*THIS IS A HACK BECAUSE DIV WIDTH DOESNT AUTOMATICALLY WORK WITH MARGINS, so you have to use 2 divs =O */
+      .extradivbecausemarginssuck {
+        width: 50%;
+        /* this will ONLY center if div has a set width */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      body {
+        background: pink;
+      }
+      img {
+        width: 200px;
+      }
+      #bun1 {
+        float: right;
+        /*  setting background color is a good way to see where divs are! */
+        background-color: red;
+      }
+      .clear {
+        clear: both;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="extradivbecausemarginssuck">
+      <div class="fish">
+        hello i am fish <br>
+        what are you? <br>
+        are you a human fish?
+      </div>
+    </div>
+    <div>
+      <img id="bun1" src="breadfish.png" alt="breadfish picture">
+    </div>
+      <div class="clear">
+
+      </div>
+    <div>
+      <img id="bun2" src="breadfish.png" alt="breadfish picture">
+    </div>
+    <div>
+      <img id="bun3" src="breadfish.png" alt="breadfish picture">
+    </div>
+    <div>
+      <img id="bun4" src="breadfish.png" alt="breadfish picture">
+    </div>
+  </body>
+</html>
