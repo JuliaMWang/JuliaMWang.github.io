@@ -36,9 +36,13 @@
         margin-left: auto;
         margin-right: auto;
       }
-      .extradivbecausemarginssuck {
+      .extraDivForMargins {
         text-align: center;
         background: linear-gradient(#a1e5fc, white);
+      }
+
+      .headingsAtTop, .aboutMe {
+        font-size: 20px;
       }
       body {
         font-family: 'Quattrocento Sans', sans-serif;
@@ -61,7 +65,7 @@
     </style>
   </head>
   <body>
-    <div class="extradivbecausemarginssuck">
+    <div class="extraDivForMargins">
       <div class="container">
         <h1>julia maryann wang</h1>
         <!-- make this rotate later -->
@@ -75,26 +79,31 @@
           <span id="typed"></span>
         </div>
 
-        <a href="mailto:juliamwa@usc.edu">juliamwa@usc.edu</a>
+        <div class="headingsAtTop">
+          <a href="mailto:juliamwa@usc.edu">juliamwa@usc.edu</a>
+          <div>
+            <a href="https://linkedin.com/in/juliamwang">My LinkedIn</a>
+          </div>
+          <div>
+            <a href="https://youtube.com/juliawangmusic">My Music Channel</a>
+          </div>
+        </div>
 
-        <div>
-          <a href="https://linkedin.com/in/juliamwang">My LinkedIn</a>
-        </div>
-        <div>
-          <a href="https://youtube.com/juliawangmusic">My Music Channel</a>
-        </div>
-        <img src="juliavacation2018.jpeg" alt="groot caption">
-        <p>About Me</p>
-        <ul>
-          <p>My name is Julia Wang, and I am an intern at Microsoft (the Explore internship, which combines software engineering and program management). I’m also a first-year Computer Science Major at the University of Southern California's Viterbi School of Engineering, as well as a Music Minor in the Thornton School of Music.</p>
-          <p>I co-founded a computing camp called Women in Robotics and Engineering Design (WiRED), which was backed by a grant from Apple, Intel, Google, and Northrop Grumman. This camp was designed to help fuel the interest of 26 young women interested in STEM by teaching them how to code and create apps.</p>
-          <p>Outside of CS, I worked in Dr. Lan Yang's electrical engineering lab at Washington University in St. Louis for several years (you can find my research paper and the places I presented on my LinkedIn). Also, music is a huge part of my life—I love to sing, play the guitar, ukulele, violin, and piano, and write music. I enjoy sharing music on my YouTube channel, as well as at hospitals and retirement homes.</p>
-        </ul>
+        <img src="juliavacation2018.jpeg" alt="groot">
+        <div class="aboutMe">
+          <p>About Me</p>
+          <ul>
+            <p>My name is Julia Wang, and I am an intern at Microsoft (the Explore internship, which combines software engineering and program management). I’m also a first-year Computer Science Major at the University of Southern California's Viterbi School of Engineering, as well as a Music Minor in the Thornton School of Music.</p>
+            <p>I co-founded a computing camp called Women in Robotics and Engineering Design (WiRED), which was backed by a grant from Apple, Intel, Google, and Northrop Grumman. This camp was designed to help fuel the interest of 26 young women interested in STEM by teaching them how to code and create apps.</p>
+            <p>Outside of CS, I worked in an electrical engineering lab at Washington University in St. Louis for several years (you can find my research paper and the places I presented on my LinkedIn). Also, music is a huge part of my life—I love to sing, play the guitar, ukulele, violin, and piano, and write music. I enjoy sharing music on my YouTube channel, as well as at hospitals and retirement homes.</p>
+          </ul>
 
-        <p>Projects</p>
-        <div>
-          <a href="https://github.com/JuliaMWang">My Github</a>
+          <p>Projects</p>
+          <div>
+            <a href="https://github.com/JuliaMWang">My Github</a>
+          </div>
         </div>
+
       </div>
     </div>
 
@@ -102,7 +111,7 @@
 
       var typed = new Typed('#typed', {
         stringsElement: '#typed-strings',
-        typeSpeed: 130
+        typeSpeed: 150
       });
     </script>
   </body>
