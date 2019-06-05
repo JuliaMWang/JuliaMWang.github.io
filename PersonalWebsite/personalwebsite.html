@@ -5,180 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julia Wang</title>
     <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
-    <style>
-      html, h1, body{
-        margin: 0;
-        padding: 0;
-      }
 
-      h1 {
-        font-family: "Shoreline", cursive;
-        transition: color 0.5s;
-        font-size: 55px;
-      }
-
-      h1:hover {
-        color: #fff;
-      }
-
-      ul {
-        width: 100%;
-        text-align: left;
-        margin-left: auto;
-        margin-right: auto;
-        padding-inline-start: 0;
-      }
-
-      .container {
-        padding: 20px;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .extraDivForMargins {
-        padding-top: 15px;
-        text-align: center;
-        background: linear-gradient(#a1e5fc, white);
-      }
-
-      .headingsAtTop, .aboutMe {
-        font-size: 20px;
-        margin: 10px;
-      }
-      body {
-        font-family: 'Quattrocento Sans', sans-serif;
-      }
-      img {
-        /* Means 100 percent of its parent (juliaPicture) */
-        width: 100%;
-      }
-      .juliaPicture {
-        width: 55%;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        border: white dotted 6px;
-        border-radius: 5px;
-      }
-
-      /* Picture's hover effect */
-      .juliaPicture .hover_top {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.3);
-      top: 0;
-      left: 0;
-      opacity: 0;
-      }
-      .juliaPicture img {
-      width: 100%;
-      }
-      .juliaPicture h3 {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      color: white;
-      margin: 0;
-      visibility: hidden;
-      }
-      .juliaPicture:hover .hover_top {
-      opacity: 1;
-      cursor: pointer;
-      }
-      .juliaPicture:hover h3 {
-      visibility: visible;
-      }
-      .clear {
-        clear: both;
-      }
-
-      #typedText {
-        font-size: 36px;
-        font-family: 'Quattrocento Sans', sans-serif;
-      }
-
-      .footer {
-        padding: 5px;
-        margin-top: 50px;
-        margin-right: 5px;
-        text-align: right;
-        font-size: 15px;
-      }
-
-      .musicDuetHeading {
-        margin-top: 40px;
-      }
-
-      video {
-        /* Means 100 percent of its parent (juliaPicture) */
-        width: 100%;
-      }
-
-      .youtubeVid {
-        margin: 20px;
-      }
-
-      /* Removes the underline from all the anchor tags*/
-      a {
-        text-decoration: none;
-        color: blue;
-      }
-
-      @font-face {
-        src: url("ShorelineFont/Shoreline.otf");
-        font-family: "Shoreline";
-      }
-
-      @media only screen and (max-width: 600px) {
-        /* Makes name smaller for mobile */
-        h1 {
-          font-size: 40px;
-        }
-        /* Makes picture larger for mobile */
-        .juliaPicture {
-          width: 100%;
-        }
-        .youtubeVid {
-          width: 100%;
-        }
-
-        /* Allows responsive web design */
-        .container {
-          width: 90%;
-          margin: 0 auto;
-          padding: 0;
-        }
-      }
-    </style>
   </head>
   <body>
     <div class="extraDivForMargins">
       <h1>julia&nbsp; maryann&nbsp; wang</h1>
+      <!-- Rotates the descriptions in a carousel. -->
+      <div id="typedText">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+          <span id="typed-strings">I am a
+            <span
+               class="txt-rotate"
+               data-period="2000"
+               data-rotate='[ "learner.", "musician.", "creator." ]'></span>
+          </span>
+      </div>
+
+      <div class="headingsAtTop">
+          <a class="linkHeading" href="mailto:juliamwa@usc.edu">juliamwa@usc.edu</a>
+          <a class="linkHeading" href="https://linkedin.com/in/juliamwang">My LinkedIn</a>
+          <a class="linkHeading" href="https://github.com/JuliaMWang">My Github</a>
+          <a class="linkHeading" href="https://youtube.com/juliawangmusic">My Music Channel</a>
+      </div>
+
       <div class="container">
-
-        <!-- Rotates the descriptions in a carousel. -->
-        <div id="typedText">
-          <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
-            <span id="typed-strings">I am a
-              <span
-                 class="txt-rotate"
-                 data-period="2000"
-                 data-rotate='[ "learner.", "musician.", "creator." ]'></span>
-            </span>
-        </div>
-
-        <div class="headingsAtTop">
-          <a href="mailto:juliamwa@usc.edu">juliamwa@usc.edu</a>
-          <div>
-            <a href="https://linkedin.com/in/juliamwang">My LinkedIn</a>
-          </div>
-          <div>
-            <a href="https://youtube.com/juliawangmusic">My Music Channel</a>
-          </div>
-        </div>
 
         <div class="juliaPicture">
           <img src="juliavacation2018.jpeg" alt="groot">
@@ -195,16 +47,11 @@
             <p>Outside of CS, I worked in an electrical engineering lab at Washington University in St. Louis for a few years (you can find my research paper and the places I presented at on my LinkedIn). Also, music is a huge part of my life—I love to sing, play the guitar, ukulele, violin, and piano, and write music. I enjoy sharing music on my YouTube channel, as well as at hospitals and retirement homes.</p>
           </ul>
 
-          <p>Projects</p>
-          <div>
-            <a href="https://github.com/JuliaMWang">My Github</a>
-          </div>
-
           <div class="musicDuetHeading">
             <p>Featured Music Duet</p>
           </div>
           <div class="youtubeVid">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/pmPwgjrTkfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/pmPwgjrTkfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
