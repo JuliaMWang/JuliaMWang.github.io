@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julia Wang</title>
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="julietteWebsiteFloatsChallengeCSS.css" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+
+  </head>
+  <body>
+    <div class="extraDivForMargins">
+      <h1>julia&nbsp; maryann&nbsp; wang</h1>
+      <!-- Rotates the descriptions in a carousel. -->
+      <div id="typedText">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+          <span id="typed-strings">I am a
+            <span
+               class="txt-rotate"
+               data-period="2000"
+               data-rotate='[ "learner.", "musician.", "creator." ]'></span>
+          </span>
+      </div>
+
+      <div class="headingsAtTop">
+          <a class="linkHeading" href="mailto:juliamwa@usc.edu">juliamwa@usc.edu</a>
+          <a class="linkHeading" href="https://linkedin.com/in/juliamwang">My LinkedIn</a>
+          <a class="linkHeading" href="https://github.com/JuliaMWang">My Github</a>
+          <a class="linkHeading" href="https://youtube.com/juliawangmusic">My Music Channel</a>
+      </div>
+
+      <div class="container">
+
+        <div class="juliaPicture">
+          <img src="juliavacation2018.jpeg" alt="groot">
+          <div class="hover_top">
+          <h3>It's me!</h3>
+          </div>
+        </div>
+
+        <div class="aboutMe">
+          <p>About Me</p>
+          <ul>
+            <p>My name is Julia Wang, and I am an Explore intern at Microsoft. I’m also a rising sophomore Computer Science student at the University of Southern California's Viterbi School of Engineering.</p>
+            <p>I co-founded a computing camp called Women in Robotics and Engineering Design (WiRED), which was backed by a grant from Apple, Intel, Google, and Northrop Grumman. This camp was designed to help fuel the interest of young women interested in STEM by teaching them how to code and create apps.</p>
+            <p>Outside of CS, I worked in an electrical engineering lab at Washington University in St. Louis for a few years (you can find my research paper and the places I presented at on my LinkedIn). Also, music is a huge part of my life—I love to sing, play the guitar, ukulele, violin, and piano, and write music. I enjoy sharing music on my YouTube channel, as well as at hospitals and retirement homes.</p>
+          </ul>
+
+          <div class="musicDuetHeading">
+            <p>Featured Music Duet</p>
+          </div>
+          <div class="youtubeVid">
+            <iframe src="https://www.youtube.com/embed/pmPwgjrTkfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Citation-->
+      <div class="footer">
+        <a href="https://codepen.io/gschier/pen/jkivt">Typing Carousel</a>
+      </div>
+
+    </div>
+
+    <script>
+
+        var TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtRotate.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 300 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function() {
+          that.tick();
+        }, delta);
+      };
+
+      window.onload = function() {
+        var elements = document.getElementsByClassName('txt-rotate');
+        for (var i=0; i<elements.length; i++) {
+          var toRotate = elements[i].getAttribute('data-rotate');
+          var period = elements[i].getAttribute('data-period');
+          if (toRotate) {
+            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+        document.body.appendChild(css);
+      };
+
+    </script>
+  </body>
+</html>
