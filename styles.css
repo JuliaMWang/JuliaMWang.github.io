@@ -155,7 +155,7 @@ a {
   font-family: "Shoreline";
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   /* Makes name smaller for mobile */
   h1 {
     font-size: 40px;
