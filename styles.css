@@ -28,6 +28,19 @@ iframe {
   display: block;
 }
 
+.youtubeVid {
+  width: 600px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  /* margin: auto; */
+}
+
+.youtubeVid iframe {
+  width: 100%;
+}
+
 .container {
   padding: 20px;
   width: 50%;
@@ -153,16 +166,6 @@ a {
 
   iframe {
     height: 14rem;
-  }
-
-/* Needs to be immediately after iframe */
-  .youtubeVid {
-    width: 600px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    /* margin: auto; */
   }
 
   /* Makes picture larger for mobile */
