@@ -61,10 +61,12 @@ img {
   display: block;
 }
 .juliaPicture {
-  width: 46.5%;
+  /* Use pixels, not % to make the size move with the text size */
+  width: 300px;
+  /* is this line needed?????? */
+  position: relative;
   margin-left: auto;
   margin-right: auto;
-  position: relative;
   border: white dotted 6px;
   border-radius: 5px;
 }
@@ -119,10 +121,13 @@ img {
 
 .youtubeVid {
   /* margin: 20px; */
-  width: 100%;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   /* margin: 0 auto; */
   height: auto;
+  position: relative;
 }
 
 /* Removes the underline from all the anchor tags*/
@@ -164,12 +169,12 @@ a {
 
   /* Makes picture larger for mobile */
   .juliaPicture {
-    width: 100%;
+    width: 80%;
     /* Includes the border in the width */
     box-sizing: border-box;
   }
   .youtubeVid {
-    width: 100%;
+    width: 90%;
   }
 
   /* Allows responsive web design */
