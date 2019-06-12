@@ -120,14 +120,12 @@ img {
 }
 
 .youtubeVid {
-  /* margin: 20px; */
   width: 600px;
+  position: relative;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  /* margin: 0 auto; */
   height: auto;
-  position: relative;
 }
 
 /* Removes the underline from all the anchor tags*/
